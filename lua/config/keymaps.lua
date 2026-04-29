@@ -23,7 +23,7 @@ vim.keymap.set("t", "<C-l>", [[<C-\><C-n><C-w>l]], { desc = "Move right window i
 vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]], { desc = "Move left window in terminal mode" })
 vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]], { desc = "Move down window in terminal mode" })
 vim.keymap.set("t", "<C-k>", [[<C-\><C-n><C-w>k]], { desc = "Move up window in terminal mode" })
-vim.keymap.set("t", "<C-n>", [[<C-\><C-n>]], { desc = "back to normal mode" })
+vim.keymap.set("t", "<C-n>", [[<C-\><C-n>]], { desc = "Move up window in terminal mode" })
 -- Resize
 vim.keymap.set("n", "<C-Up>", ":resize +2<CR>", { desc = "Increase window height" })
 vim.keymap.set("n", "<C-Down>", ":resize -2<CR>", { desc = "Decrease window height" })
@@ -101,6 +101,14 @@ end)
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
 vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>")
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
+
+-- git
+vim.keymap.set("n", "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", { desc = "Preview hunk" })
+vim.keymap.set("n", "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", { desc = "Reset hunk" })
+vim.keymap.set("n", "<leader>gs", "<cmd>Gitsigns stage_hunk<cr>", { desc = "Stage hunk" })
+vim.keymap.set("n", "<leader>gb", "<cmd>Gitsigns blame_line<cr>", { desc = "Blame line" })
+vim.keymap.set("n", "]h", "<cmd>Gitsigns next_hunk<cr>", { desc = "Next hunk" })
+vim.keymap.set("n", "[h", "<cmd>Gitsigns prev_hunk<cr>", { desc = "Previous hunk" })
 
 -- claude code
 vim.keymap.set("n", "<leader>ac", "<cmd>ClaudeCode<cr>",          { desc = "Toggle Claude" })

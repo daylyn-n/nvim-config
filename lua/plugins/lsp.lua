@@ -22,6 +22,15 @@ return {
           "clangd",
           "pyright",
           "jdtls",
+          "ts_ls",
+          "prettier",
+          "eslint_d",
+          "jsonls",
+          "yamlls",
+          "dockerls",
+          "docker_compose_language_service",
+          "sqls",
+          "tailwindcss",
         },
       })
 
@@ -48,9 +57,37 @@ return {
 
       vim.lsp.config("pyright", {})
 
+      vim.lsp.config("ts_ls", {
+        filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+        root_markers = { "tsconfig.json", "jsconfig.json", "package.json", ".git" },
+      })
+
+      vim.lsp.config("jsonls", {
+        filetypes = { "json", "jsonc" },
+      })
+
+      vim.lsp.config("yamlls", {
+        filetypes = { "yaml", "yml" },
+      })
+
+      vim.lsp.config("dockerls", {})
+      vim.lsp.config("docker_compose_language_service", {
+        filetypes = { "yaml.docker-compose" },
+      })
+
+      vim.lsp.config("sqls", {})
+      vim.lsp.config("tailwindcss", {})
+
       vim.lsp.enable("lua_ls")
       vim.lsp.enable("clangd")
       vim.lsp.enable("pyright")
+      vim.lsp.enable("ts_ls")
+      vim.lsp.enable("jsonls")
+      vim.lsp.enable("yamlls")
+      vim.lsp.enable("dockerls")
+      vim.lsp.enable("docker_compose_language_service")
+      vim.lsp.enable("sqls")
+      vim.lsp.enable("tailwindcss")
     end,
   },
 }
