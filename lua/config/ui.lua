@@ -29,11 +29,4 @@ if vim.g.neovide then
   end, { desc = "Reset zoom" })
 end
 
-vim.cmd.colorscheme("murphy")
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
-vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
-
-vim.cmd([[
-  hi TabLineFill guibg=NONE ctermfg=242 ctermbg=NONE
-]])
+-- colorscheme lives in lua/plugins/colorscheme.lua

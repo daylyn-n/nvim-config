@@ -70,6 +70,15 @@ return {
         filetypes = { "yaml", "yml" },
       })
 
+      vim.filetype.add({
+        filename = {
+          ["docker-compose.yml"] = "yaml.docker-compose",
+          ["docker-compose.yaml"] = "yaml.docker-compose",
+          ["compose.yml"] = "yaml.docker-compose",
+          ["compose.yaml"] = "yaml.docker-compose",
+        },
+      })
+
       vim.lsp.config("dockerls", {})
       vim.lsp.config("docker_compose_language_service", {
         filetypes = { "yaml.docker-compose" },
